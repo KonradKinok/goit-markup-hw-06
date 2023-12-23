@@ -17,6 +17,7 @@
     --green: #31D0AA;
     --light-slate:#8E8F99;
     --dairy: #FCFCFC;
+    --grey: #2e2f42;
 }
 
 /* Globalne resetowanie stylow */
@@ -137,7 +138,7 @@ body{
         0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
     background-color: var(--dairy);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
+    padding: 72px 24px 24px 24px;
     
 }
 
@@ -159,7 +160,7 @@ body{
 }
 
 .modal-icon-close {
-    fill: var(--color-navy-blue);
+    fill: var(--navy-blue);
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -168,6 +169,176 @@ body{
     background-color: var(--ocean);
     border: none;
     fill: var(--white);
+}
+
+.modal-title {
+    color: var(--grey);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.32px;
+    text-align: center;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.modal-wrapper {
+    margin-bottom: 8px;
+}
+
+.modal-label {
+    color: var(--slate);
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.modal-icon-wrapper {
+    position: relative;
+}
+
+.modal-input {
+    width: 100%;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    background-color: transparent;
+    padding-left: 38px;
+    outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-input:focus {
+    border-color: var(--iris);
+}
+
+.modal-input:focus+.modal-icon {
+    fill: var(--iris);
+}
+
+.modal-icon {
+    fill: var(--grey);
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-text-field-wrapper {
+    margin-bottom: 16px;
+}
+
+.modal-text-field {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    width: 100%;
+    min-height: 120px;
+    padding: 8px 16px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    outline: transparent;
+    resize: none;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    color: rgba(46, 47, 66, 0.4);
+    background-color: transparent;
+}
+
+.modal-text-field::placeholder {
+    color: rgba(46, 47, 66, 0.4);
+}
+
+.modal-text-field:focus {
+    border-color: var(--iris);
+}
+
+.modal-check-wrapper {
+    margin-bottom: 24px;
+}
+
+.modal-check-input:checked+.modal-check-text .modal-check-box {
+    background-color: var(--ocean);
+    border: none;
+    fill: var(--cloud);
+}
+
+.modal-check-text {
+    color: var(--slate);
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+}
+
+.modal-check-box {
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    margin-right: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    fill: transparent;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.modal-check-input:focus+.modal-check-text .modal-check-box {
+    border-color: var(--ocean);
+}
+
+.modal-link-text {
+    margin-left: 4px;
+    color: var(--iris);
+    text-decoration: underline;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-link-text:hover,
+.modal-link-text:focus {
+    color: var(--ocean);
+}
+
+.modal-link-text {
+    margin-left: 4px;
+    color: var(--iris);
+    text-decoration: underline;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-button-submit {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    min-width: 169px;
+    height: 56px;
+    border-radius: 4px;
+    background-color: var(--iris);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    padding: 16px 32px;
+    margin: 0 auto;
+    display: block;
+    color: var(--white);
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-button-submit:hover,
+.modal-button-submit:focus {
+    background-color: var(--ocean);
 }
 /* -------------------Modal */
 
@@ -456,7 +627,6 @@ body{
 .footer-text
 {
     line-height: 1.5;
-    letter-spacing: 0.32px;
     color: var(--cloud);
     width: 264px;
     letter-spacing: 0.02em
@@ -478,6 +648,80 @@ body{
 .footer .socialmedia-link-icon:focus
 {
     background-color: var(--green);
+}
+
+/* Subscribe form */
+.footer-subscribe-wrapper {
+    margin-top: 0;
+    margin-left: 80px;
+}
+
+.footer-subscribe-text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--white);
+    margin-bottom: 16px;
+}
+
+.footer-subscribe-form {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+
+.footer-subscribe-input {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    background-color: transparent;
+    width: 264px;
+    min-height: 40px;
+    flex-shrink: 0;
+    padding-left: 16px;
+    border-radius: 4px;
+    border: 1px solid var(--white);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    outline: none;
+}
+
+.footer-subscribe-input::placeholder {
+    color: var(--white);
+}
+
+.footer-subscribe-button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    background-color: var(--iris);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 40px;
+    min-width: 165px;
+    padding: 8px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-subscribe-button:hover,
+.footer-subscribe-button:focus {
+    background-color: var(--ocean);
+}
+
+.footer-subscribe-icon {
+    fill: var(--white);
+    margin-left: 16px;
 }
 
 /* Portfolio */
